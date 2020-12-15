@@ -1,0 +1,11 @@
+1) Abrir ANACONDA
+2) Executar CMD.EXE no ANACONDA
+3) Entrar na pasta do projeto (CD NOME DA PASTA)
+4) Executar os comandos
+pip install flask
+pip install flask-wtf
+pip install flask-bootstrap
+set FLASK_APP=app.py
+set FLASK_DEBUG=1
+flask run
+5) Abrir o navegador de digitar http://localhost:5000

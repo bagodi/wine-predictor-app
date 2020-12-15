@@ -1,0 +1,77 @@
+{% extends "bootstrap/base.html" %}
+{% import  "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Wine Predictor App{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Wine Predictor App</h1>
+    </div>
+    <div class="page-body">
+        <form action="/" method="post" class="form">
+            {{ form.csrf_token }}
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Alcohol, class='form-control') }}
+                        </div>
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Malic_acid, class='form-control') }}
+                        </div>
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Magnesium, class='form-control') }}
+                        </div>
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Total_phenols, class='form-control') }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Ash, class='form-control') }}
+                        </div>
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Alcalinity_of_ash, class='form-control') }}
+                        </div>
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Flavanoids, class='form-control') }}
+                        </div>
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Nonflavanoid_phenols, class='form-control') }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Proanthocyanins, class='form-control') }}
+                        </div>
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Color_intensity, class='form-control') }}
+                        </div>
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.Hue, class='form-control') }}
+                        </div>
+                        <div class="form-group col-md-3">
+                            {{ wtf.form_field(form.HOD280_OD315_of_diluted_wines, class='form-control') }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            {{ wtf.form_field(form.Proline, class='form-control') }}
+                        </div>        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary">Predict</button>
+                        </div>        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="{{ url_for('static', filename=specie+'.jpg')}}" class="w-50 h-50 img-thumbnail">
+                    <figcaption class="figure-caption">{{specie}}</figcaption>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
